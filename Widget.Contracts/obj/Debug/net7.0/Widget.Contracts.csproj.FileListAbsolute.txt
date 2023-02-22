@@ -1,0 +1,12 @@
+C:\Users\rande\Documents\Widget\Widget.Contracts\bin\Debug\net7.0\Widget.Contracts.deps.json
+C:\Users\rande\Documents\Widget\Widget.Contracts\bin\Debug\net7.0\Widget.Contracts.dll
+C:\Users\rande\Documents\Widget\Widget.Contracts\bin\Debug\net7.0\Widget.Contracts.pdb
+C:\Users\rande\Documents\Widget\Widget.Contracts\obj\Debug\net7.0\Widget.Contracts.csproj.AssemblyReference.cache
+C:\Users\rande\Documents\Widget\Widget.Contracts\obj\Debug\net7.0\Widget.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rande\Documents\Widget\Widget.Contracts\obj\Debug\net7.0\Widget.Contracts.AssemblyInfoInputs.cache
+C:\Users\rande\Documents\Widget\Widget.Contracts\obj\Debug\net7.0\Widget.Contracts.AssemblyInfo.cs
+C:\Users\rande\Documents\Widget\Widget.Contracts\obj\Debug\net7.0\Widget.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\rande\Documents\Widget\Widget.Contracts\obj\Debug\net7.0\Widget.Contracts.dll
+C:\Users\rande\Documents\Widget\Widget.Contracts\obj\Debug\net7.0\refint\Widget.Contracts.dll
+C:\Users\rande\Documents\Widget\Widget.Contracts\obj\Debug\net7.0\Widget.Contracts.pdb
+C:\Users\rande\Documents\Widget\Widget.Contracts\obj\Debug\net7.0\ref\Widget.Contracts.dll
