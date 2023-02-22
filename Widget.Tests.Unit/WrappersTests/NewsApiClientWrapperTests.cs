@@ -6,7 +6,7 @@ namespace Widget.Tests.WrappersTests;
 public class NewsApiClientWrapperTests
 {
     [Test]
-    public void Test()
+    public void GetEverythingAsync_ReturnsExpectedErrorMessage()
     {
         // Arrange
         

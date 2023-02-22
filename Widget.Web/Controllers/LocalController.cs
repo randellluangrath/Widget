@@ -21,7 +21,7 @@ public class LocalController : WidgetBaseController<LocalController>
     // 200
     // 400
     // 500
-    // [ApiKey]
+    [ApiKey]
     [HttpGet]
     public IActionResult Get([FromQuery] string q, [FromQuery] DateTime from,
         [FromQuery] int page, [FromQuery] int pageSize, [FromQuery] ResourceType resourceType)
@@ -46,7 +46,6 @@ public class LocalController : WidgetBaseController<LocalController>
                     localFile = _localService.GetLocalFiles(q, page, pageSize);
                     break;
                 }
-                case ResourceType.NoOp:
                 default:
                     return BadRequest($"Error: parameter {nameof(resourceType)} is not supported.");
             }
