@@ -22,3 +22,5 @@ News
 Query Parameters: q (City), from (Date), page (Page), pageSize (Take)
 
 http://localhost:54366/v1/news
+
+To start the project, you'll do `dotnet run` targeting the IIS Express Run Configuration
