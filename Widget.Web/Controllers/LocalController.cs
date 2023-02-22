@@ -27,7 +27,7 @@ public class LocalController : WidgetBaseController<LocalController>
         [FromQuery] int page, [FromQuery] int pageSize, [FromQuery] ResourceType resourceType)
     {
         if (resourceType == ResourceType.NoOp)
-            return BadRequest($"Error: parameter {nameof(resourceType)} is not supported.");
+            return BadRequest($"Error: Parameter {nameof(resourceType)} is not supported.");
         
         IReadOnlyCollection<LocalApplication>? localApplications = null;
         IReadOnlyCollection<LocalFile>? localFile = null;
@@ -47,7 +47,7 @@ public class LocalController : WidgetBaseController<LocalController>
                     break;
                 }
                 default:
-                    return BadRequest($"Error: parameter {nameof(resourceType)} is not supported.");
+                    return BadRequest($"Error: Parameter {nameof(resourceType)} is not supported.");
             }
         }
         catch (Exception ex)

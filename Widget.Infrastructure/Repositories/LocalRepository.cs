@@ -14,12 +14,12 @@ public class LocalRepository : ILocalRepository
     public LocalRepository()
     {
         _localApplications = Enumerable.Range(1, 10)
-            .Select(x => new LocalApplication { Name = $"App {_random.Next(100)}", LastModified = RandomDay() });
+            .Select(x => new LocalApplication { Name = $"App {x}", LastModified = RandomDay() });
 
         _localFile = Enumerable.Range(1, 10)
             .Select(x => new LocalFile()
             {
-                Name = $"File {_random.Next(100)}", LastModified = RandomDay(),
+                Name = $"File {x}", LastModified = RandomDay(),
                 Type = _types[_random.Next(0, _types.Length)]
             });
     }

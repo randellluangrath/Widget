@@ -20,7 +20,7 @@ public class WeatherApiClient : IWeatherApiClient
         _logger = logger;
     }
 
-    public async Task<WeatherResponse?> GetCurrentWeatherAsync(string? q)
+    public async Task<WeatherResponse?> GetAsync(string? q)
     {
         WeatherResponse? weatherResponse;
 
@@ -41,7 +41,7 @@ public class WeatherApiClient : IWeatherApiClient
             weatherResponse = await response.Content.ReadFromJsonAsync<WeatherResponse?>();
         else
         {
-            _logger.LogError($"Error calling {nameof(GetCurrentWeatherAsync)} from Weather Api Client: {response?.Content}");
+            _logger.LogError($"Error calling {nameof(GetAsync)} from Weather Api Client: {response?.Content}");
             throw new HttpRequestException();
         }
 

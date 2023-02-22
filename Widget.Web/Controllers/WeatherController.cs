@@ -23,23 +23,23 @@ public class WeatherController : WidgetBaseController<WeatherController>
     // 500
     [ApiKey]
     [HttpGet]
-    public async Task<ActionResult> Get([FromQuery] string q)
+    public async Task<ActionResult> GetAsync([FromQuery] string q)
     {
         if (string.IsNullOrWhiteSpace(q))
-            return BadRequest($"Error parameter {nameof(q)} is missing.");
+            return BadRequest($"Error: Parameter {nameof(q)} is missing.");
 
         WeatherResponse? result;
 
         try
         {
-            result = await _weatherApiClient.GetCurrentWeatherAsync(q);
+            result = await _weatherApiClient.GetAsync(q);
 
             if (result is null)
                 return NotFound();
         }
         catch (Exception ex)
         {
-            LogError(nameof(Get), ex);
+            LogError(nameof(GetAsync), ex);
             return StatusCode(500);
         }
 

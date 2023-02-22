@@ -24,7 +24,7 @@ public class NewsController : WidgetBaseController<NewsController>
     // 500
     [ApiKey]
     [HttpGet]
-    public async Task<IActionResult> Get([FromQuery] string q, [FromQuery] DateTime from,
+    public async Task<IActionResult> GetAsync([FromQuery] string q, [FromQuery] DateTime from,
         [FromQuery] int page, [FromQuery] int pageSize)
     {
         var everythingRequest = new EverythingRequest
@@ -49,14 +49,14 @@ public class NewsController : WidgetBaseController<NewsController>
 
         try
         {
-            result = await _newsApiClientWrapper.GetEverythingAsync(everythingRequest);
+            result = await _newsApiClientWrapper.GetAsync(everythingRequest);
 
             if (result is null)
                 return NotFound();
         }
         catch (Exception ex)
         {
-            LogError(nameof(Get), ex);
+            LogError(nameof(GetAsync), ex);
             return StatusCode(500);
         }
 

@@ -5,5 +5,5 @@ namespace Widget.Contracts.Interfaces;
 
 public interface INewsApiClientWrapper
 {
-    Task<ReadOnlyCollection<Article>?> GetEverythingAsync(EverythingRequest everythingRequest);
+    Task<ReadOnlyCollection<Article>?> GetAsync(EverythingRequest everythingRequest);
 }
