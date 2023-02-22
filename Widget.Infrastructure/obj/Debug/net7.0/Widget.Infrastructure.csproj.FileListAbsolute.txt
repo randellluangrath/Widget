@@ -1,0 +1,15 @@
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\bin\Debug\net7.0\Widget.Infrastructure.deps.json
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\bin\Debug\net7.0\Widget.Infrastructure.dll
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\bin\Debug\net7.0\Widget.Infrastructure.pdb
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\bin\Debug\net7.0\Widget.Contracts.dll
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\bin\Debug\net7.0\Widget.Contracts.pdb
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\obj\Debug\net7.0\Widget.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\obj\Debug\net7.0\Widget.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\obj\Debug\net7.0\Widget.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\obj\Debug\net7.0\Widget.Infrastructure.AssemblyInfo.cs
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\obj\Debug\net7.0\Widget.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\obj\Debug\net7.0\Widget.Infrastructure.csproj.CopyComplete
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\obj\Debug\net7.0\Widget.Infrastructure.dll
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\obj\Debug\net7.0\refint\Widget.Infrastructure.dll
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\obj\Debug\net7.0\Widget.Infrastructure.pdb
+C:\Users\rande\Documents\Widget\Widget.Infrastructure\obj\Debug\net7.0\ref\Widget.Infrastructure.dll
