@@ -5,17 +5,17 @@ namespace Widget.Contracts.Models;
 public class WeatherResponse
 {
     [JsonPropertyName("location")]
-    public Location Location { get; set; }
+    public Location? Location { get; set; }
     [JsonPropertyName("current")]
-    public Current Current { get; set; }
+    public Current? Current { get; set; }
 }
 
 public class Condition
 {
     [JsonPropertyName("text")]
-    public string Text { get; set; }
+    public string? Text { get; set; }
     [JsonPropertyName("icon")]
-    public string Icon { get; set; }
+    public string? Icon { get; set; }
     [JsonPropertyName("code")]
     public int Code { get; set; }
 }
@@ -25,7 +25,7 @@ public class Current
     [JsonPropertyName("last_updated_epoch")]
     public int LastUpdatedEpoch { get; set; }
     [JsonPropertyName("last_updated")]
-    public string LastUpdated { get; set; }
+    public string? LastUpdated { get; set; }
     [JsonPropertyName("temp_c")]
     public double TempC { get; set; }
     [JsonPropertyName("temp_f")]
@@ -33,7 +33,7 @@ public class Current
     [JsonPropertyName("is_day")]
     public int IsDay { get; set; }
     [JsonPropertyName("condition")]
-    public Condition Condition { get; set; }
+    public Condition? Condition { get; set; }
     [JsonPropertyName("wind_mph")]
     public double WindMph { get; set; }
     [JsonPropertyName("wind_kph")]
@@ -41,7 +41,7 @@ public class Current
     [JsonPropertyName("wind_degree")]
     public int WindDegree { get; set; }
     [JsonPropertyName("wind_dir")]
-    public string WindDir { get; set; }
+    public string? WindDir { get; set; }
     [JsonPropertyName("pressure_mb")]
     public double PressureMb { get; set; }
     [JsonPropertyName("pressure_in")]
@@ -73,19 +73,19 @@ public class Current
 public class Location
 {
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
     [JsonPropertyName("region")]
-    public string Region { get; set; }
+    public string? Region { get; set; }
     [JsonPropertyName("country")]
-    public string Country { get; set; }
+    public string? Country { get; set; }
     [JsonPropertyName("lat")]
     public double Lat { get; set; }
     [JsonPropertyName("lon")]
     public double Lon { get; set; }
     [JsonPropertyName("tz_id")]
-    public string TzId { get; set; }
+    public string? TzId { get; set; }
     [JsonPropertyName("localtime_epoch")]
     public int LocaltimeEpoch { get; set; }
     [JsonPropertyName("localtime")]
-    public string Localtime { get; set; }
+    public string? Localtime { get; set; }
 }
