@@ -31,3 +31,8 @@ http://localhost:54366/v1/news
 # Get Started
 
 To start the project, you'll do `dotnet run` targeting the IIS Express Run Configuration
+
+TODOs: 
+- Add code coverage
+- Implement more cacheing where necessary
+- Clean up front-end architecture, components, theming, etc
