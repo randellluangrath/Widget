@@ -58,11 +58,8 @@ export class WidgetComponent implements OnInit {
   fgFilter: FormGroup;
 
   localLoading: boolean = false;
-  weatherLoading: boolean = false;
-  newsLoading: boolean = false;
-
-  hasApplicationTypes: boolean = false;
-  hasFileTypes: boolean = false;
+  weatherLoading: boolean = true;
+  newsLoading: boolean = true;
 
   constructor(
     private localService: LocalService,
