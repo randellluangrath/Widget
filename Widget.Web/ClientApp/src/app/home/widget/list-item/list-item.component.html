@@ -1,1 +1,22 @@
-<p>{{ name }}</p>
+<div
+  *ngIf="!isSearch"
+  (mouseenter)="showClose = true"
+  (mouseleave)="showClose = false"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+  style="padding-top: 10px"
+>
+  <p style="margin-left: 12px">{{ name }}</p>
+  <p *ngIf="showClose" style="margin-right: 12px" (click)="removeItemClicked()">
+    x
+  </p>
+</div>
+
+<div
+  *ngIf="isSearch"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+  style="padding-top: 10px"
+>
+  <p style="margin-left: 12px">{{ name }}</p>
+</div>

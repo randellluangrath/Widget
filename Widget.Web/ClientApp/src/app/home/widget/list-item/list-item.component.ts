@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-list-item',
@@ -6,6 +6,18 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./list-item.component.css'],
 })
 export class ListItemComponent {
+  showClose: boolean = false;
+
   @Input()
   name: string = '';
+
+  @Input()
+  isSearch: boolean = false;
+
+  @Output()
+  removeItemClickedEvent: EventEmitter<any> = new EventEmitter();
+
+  public removeItemClicked(): void {
+    this.removeItemClickedEvent.emit();
+  }
 }

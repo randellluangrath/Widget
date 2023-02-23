@@ -48,10 +48,11 @@ export class WidgetComponent implements OnInit {
     title: '',
     description: '',
     urlToImage: '',
+    url: '',
   };
 
-  initialLocalFiles: LocalFile[];
-  localFiles: LocalFile[];
+  initialLocalFiles: LocalFile[] = [];
+  localFiles: LocalFile[] = [];
 
   fcFilter: FormControl;
   fgFilter: FormGroup;
@@ -145,6 +146,10 @@ export class WidgetComponent implements OnInit {
       .subscribe(() => {
         this.localLoading = false;
       });
+  }
+
+  public onRemoveItemClicked(index: number): void {
+    this.initialLocalFiles.splice(index, 1);
   }
 
   private getRecentApplications(): Observable<Array<LocalFile>> {

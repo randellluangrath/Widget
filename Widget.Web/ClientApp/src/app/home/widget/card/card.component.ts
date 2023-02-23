@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Weather } from 'app/models/weather';
+import {Article} from "../../../models/article";
 
 @Component({
   selector: 'app-card',
@@ -14,16 +15,7 @@ export class CardComponent {
   isWeatherCard: boolean;
 
   @Input()
-  headline: string = '';
-
-  @Input()
-  source: string = '';
-
-  @Input()
-  description: string = '';
-
-  @Input()
-  imageUrl: string = '';
+  news: Article;
 
   @Input()
   currentWeather: Weather;

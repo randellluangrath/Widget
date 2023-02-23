@@ -3,21 +3,23 @@
 </div>
 
 <div *ngIf="isNewsCard && !isLoading">
-  <p-card [header]="headline" [style]="{ 'margin-bottom': '1em' }">
+  <p-card [header]="news.title" [style]="{ 'margin-bottom': '1em' }">
     <ng-template pTemplate="header">
-      <img alt="Card" [src]="imageUrl" />
+      <img alt="Card" [src]="news.urlToImage" />
     </ng-template>
-    <p>Source: {{ source }}</p>
+    <p>Source: {{ news.source.name }}</p>
     <p>
-      {{ description }}
+      {{ news.description }}
     </p>
+    <a href="{{news.url}}" target="_blank"><p style="font-size: 12px">
+      {{ news.url }}
+    </p></a>
   </p-card>
 </div>
 
 <div *ngIf="isWeatherCard && !isLoading" fxFill>
   <p-card
     *ngIf="!isLoading"
-    [header]="headline"
     [style]="{ 'margin-bottom': '1em', 'padding-top': '2em' }"
   >
     <ng-template pTemplate="header">

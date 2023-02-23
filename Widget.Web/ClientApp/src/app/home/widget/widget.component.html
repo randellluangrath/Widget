@@ -1,22 +1,33 @@
 <div fxLayout="row" fxLayoutAlign="center center">
-  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-8">
+  <div
+    class="surface-card p-4 shadow-6 border-round w-full lg:w-7"
+    style="background-color: #f8f8f8 !important"
+  >
     <div>
       <label class="block text-900 font-medium mb-2">Search</label>
-      <input
-        type="text"
-        placeholder="Type here to search"
-        pInputText
-        class="w-full mb-3"
-        [formControl]="fcFilter"
-      />
+      <span class="p-input-icon-left" style="width: 100%; margin-bottom: 1em">
+        <i class="pi pi-search"></i>
+        <input
+          type="text"
+          placeholder="Type here to search"
+          pInputText
+          [formControl]="fcFilter"
+          style="width: 100%"
+        />
+      </span>
     </div>
-    <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="20px">
+    <div
+      fxLayout="row"
+      fxLayoutAlign="space-between start"
+      fxLayoutGap="20px"
+      style="background-color: #f8f8f8"
+    >
       <div
         fxLayout="column"
         fxLayoutAlign="start start"
         style="height: 100%; width: 50%"
       >
-        <div>
+        <div style="width: 100%">
           <div *ngIf="fcFilter.value">
             <h4>Best Match</h4>
           </div>
@@ -29,10 +40,18 @@
           <div *ngIf="localLoading">
             <app-loading-indicator></app-loading-indicator>
           </div>
-          <div *ngIf="!localLoading">
+          <div *ngIf="!localLoading && !fcFilter.value">
             <app-list-item
-              *ngFor="let localFile of localFiles"
+              *ngFor="let initialLocalFile of initialLocalFiles; let i = index"
+              [name]="initialLocalFile.name"
+              (removeItemClickedEvent)="onRemoveItemClicked(i)"
+            ></app-list-item>
+          </div>
+          <div *ngIf="!localLoading && fcFilter.value">
+            <app-list-item
+              *ngFor="let localFile of localFiles; let i = index"
               [name]="localFile.name"
+              [isSearch]="true"
             ></app-list-item>
           </div>
         </div>
@@ -45,10 +64,7 @@
         <app-card
           [isLoading]="newsLoading"
           [isNewsCard]="true"
-          [headline]="news.title"
-          [source]="news.source.name"
-          [description]="news.description"
-          [imageUrl]="news.urlToImage"
+          [news]="news"
         ></app-card>
         <app-card
           [isLoading]="weatherLoading"
