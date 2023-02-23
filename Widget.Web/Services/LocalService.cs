@@ -12,15 +12,16 @@ public class LocalService : ILocalService
         _localRepository = localRepository;
     }
 
-    public IReadOnlyCollection<LocalApplication>? GetLocalApplication(string q, DateTime from, int page, int pageSize)
-    {
-        var localApplications = _localRepository.GetLocalApplication();
-        return localApplications.Where(x => x.Name.ToLower().Contains(q.ToLower())).ToList();
-    }
-
-    public IReadOnlyCollection<LocalFile>? GetLocalFiles(string q, int page, int pageSize)
+    public IReadOnlyCollection<LocalFile>? GetLocalFiles(string? q, int? pageSize)
     {
         var localFiles = _localRepository.GetLocalFiles();
-        return localFiles.Where(x => x.Name.ToLower().Contains(q.ToLower())).ToList();
+
+        if (!string.IsNullOrWhiteSpace(q))
+            localFiles = localFiles.Where(x => x.Name.ToLower().Contains(q.ToLower()));
+        
+        if (pageSize.HasValue && !string.IsNullOrWhiteSpace(pageSize.ToString()))
+            localFiles = localFiles.Take(pageSize.Value);
+
+        return localFiles.ToList();
     }
 }

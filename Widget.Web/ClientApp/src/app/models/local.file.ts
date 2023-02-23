@@ -1,5 +1,5 @@
 export interface LocalFile {
-  Name: string;
-  Type: string;
-  LastModified: Date;
+  name: string;
+  lastModified: Date;
+  type: number;
 }

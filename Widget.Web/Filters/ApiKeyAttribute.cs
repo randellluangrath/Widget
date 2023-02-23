@@ -22,7 +22,7 @@ public class ApiKeyAttribute : Attribute, IAuthorizationFilter
 
     private static string GetSubmittedApiKey(HttpContext context)
     {
-        return context.Request.Headers[ApiKeyHeaderName];
+        return context.Request.Headers["X-API-Key"];
     }
 
     private static string? GetApiKey(HttpContext context)

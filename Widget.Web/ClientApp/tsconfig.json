@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strictPropertyInitialization": false,
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -14,15 +15,10 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2018", "dom"],
     "baseUrl": "src",
     "paths": {
-      "@env/*": [
-        "environments/*"
-      ]
+      "@env/*": ["environments/*"]
     },
     "useDefineForClassFields": false
   },

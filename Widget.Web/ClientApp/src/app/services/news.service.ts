@@ -13,7 +13,6 @@ export class NewsService {
   // Get by q = category, date, page, and page size.
   getNews(
     q: string,
-    from: Date,
     page: number,
     pageSize: number
   ): Observable<Array<Article>> {
@@ -21,7 +20,6 @@ export class NewsService {
       .get<Array<Article>>(this.targetUrl, {
         params: {
           q: q,
-          from: from.toDateString(),
           page: page,
           pageSize: pageSize,
         },

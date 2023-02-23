@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Widget.Contracts.Enums;
 using Widget.Contracts.Interfaces;
 using Widget.Contracts.Models;
 using Widget.Web.Filters;
@@ -19,36 +18,16 @@ public class LocalController : WidgetBaseController<LocalController>
     }
 
     // 200
-    // 400
     // 500
     [ApiKey]
     [HttpGet]
-    public IActionResult Get([FromQuery] string q, [FromQuery] DateTime from,
-        [FromQuery] int page, [FromQuery] int pageSize, [FromQuery] ResourceType resourceType)
+    public IActionResult Get([FromQuery] string? q, int? pageSize)
     {
-        if (resourceType == ResourceType.NoOp)
-            return BadRequest($"Error: Parameter {nameof(resourceType)} is not supported.");
-        
-        IReadOnlyCollection<LocalApplication>? localApplications = null;
-        IReadOnlyCollection<LocalFile>? localFile = null;
-        
+        IReadOnlyCollection<LocalFile>? localFiles;
+
         try
         {
-            switch (resourceType)
-            {
-                case ResourceType.Application:
-                {
-                    localApplications = _localService.GetLocalApplication(q, from, page, pageSize);
-                    break;
-                }
-                case ResourceType.File:
-                {
-                    localFile = _localService.GetLocalFiles(q, page, pageSize);
-                    break;
-                }
-                default:
-                    return BadRequest($"Error: Parameter {nameof(resourceType)} is not supported.");
-            }
+            localFiles = _localService.GetLocalFiles(q, pageSize);
         }
         catch (Exception ex)
         {
@@ -56,6 +35,6 @@ public class LocalController : WidgetBaseController<LocalController>
             return StatusCode(500);
         }
 
-        return localApplications is not null ? Ok(localApplications) : Ok(localFile);
+        return Ok(localFiles);
     }
 }

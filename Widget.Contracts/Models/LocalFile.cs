@@ -1,8 +1,10 @@
-﻿namespace Widget.Contracts.Models;
+﻿using Widget.Contracts.Enums;
+
+namespace Widget.Contracts.Models;
 
 public class LocalFile
 {
     public string Name { get; set; }
-    public string Type { get; set; }
+    public ResourceType Type { get; set; }
     public DateTime LastModified { get; set; }
 }
