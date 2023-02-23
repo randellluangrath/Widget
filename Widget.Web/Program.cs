@@ -17,7 +17,10 @@ builder.Services.AddScoped<ILocalService, LocalService>();
 builder.Services.AddSingleton<ILocalRepository, LocalRepository>();
 builder.Services.AddSingleton<IWidgetCache<WeatherResponse, string>, WidgetCache<WeatherResponse, string>>();
 builder.Services.AddWeatherApiClient(builder.Configuration);
-builder.Services.AddControllersWithViews();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
 
 builder.Services.AddCors(options =>
 {
@@ -37,8 +40,17 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+if (app.Environment.IsDevelopment())
+{
+    // Add swagger.
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    });
+}
+
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 app.UseRouting();
 
 app.MapControllerRoute(
@@ -46,5 +58,7 @@ app.MapControllerRoute(
     pattern: "{controller}/{action=Index}/{id?}");
 
 app.MapFallbackToFile("index.html");
+
+
 
 app.Run();
