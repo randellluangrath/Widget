@@ -120,5 +120,6 @@ To start the project, you'll do `dotnet run` targeting the IIS Express Run Confi
 
 TODOs: 
 - Add code coverage
-- Implement more cacheing where necessary
+- Implement more caching where necessary
+- Use DTOs and define model responsibilities
 - Clean up front-end architecture, components, theming, etc
