@@ -6,30 +6,113 @@ This was built using the latest versions of Angular and .NET Core. The architect
 
 
 # API Documentation
-
-Weather
-
-/GET
-
-Query Parameters: q (Search String) 
-
-http://localhost:54366/v1/weather
-
-Local
-
-/GET
-
-Query Parameters: q (Search String) pageSize (Take)
-
-http://localhost:54366/v1/local
-
-News
-
-/GET
-
-Query Parameters: q (City), from (Date), page (Page), pageSize (Take)
-
-http://localhost:54366/v1/news
+```
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Widget.Web",
+    "version": "1.0"
+  },
+  "paths": {
+    "/v1/Local": {
+      "get": {
+        "tags": [
+          "Local"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/News": {
+      "get": {
+        "tags": [
+          "News"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/Weather": {
+      "get": {
+        "tags": [
+          "Weather"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}
+```
 
 # Get Started
 
