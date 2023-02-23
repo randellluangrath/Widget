@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { WidgetModule } from './home/widget/widget.module';
 import { JwtInterceptor } from './helpers/jwt.intercepter';
 
@@ -23,7 +22,6 @@ import { JwtInterceptor } from './helpers/jwt.intercepter';
         pathMatch: 'full',
       },
     ]),
-    ReactiveFormsModule,
     WidgetModule,
   ],
   providers: [
