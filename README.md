@@ -1,6 +1,6 @@
 # Widget
 
-This was built using the latest versions of Angular and .NET Core. The architecture pattern chosen for the back-end is a loose Onion Architecture approach. The weather and news data are fetched from public APIs, but the local file/application data is mocked. PrimeNG was the material library used on the client side.
+This was built using the latest versions of Angular and .NET Core. The architecture pattern chosen for the back-end is a loose Onion Architecture approach and the design pattern used to create the widget was a smart/dumb component approach. The weather and news data are fetched from public APIs, but the local file/application data is mocked. PrimeNG was the material library used on the client side.
 
 ![widget-demo](https://user-images.githubusercontent.com/7450751/220909758-5b1f03f8-5527-40d7-845d-01b23936e227.gif)
 
