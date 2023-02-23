@@ -2,6 +2,7 @@ using Widget.Contracts.Interfaces;
 using Widget.Contracts.Models;
 using Widget.Contracts.Wrappers;
 using Widget.Infrastructure.Repositories;
+using Widget.Web.Cache;
 using Widget.Web.Clients;
 using Widget.Web.Extensions;
 using Widget.Web.Services;
@@ -14,10 +15,20 @@ builder.Services.AddScoped<INewsApiClientWrapper, NewsApiClientWrapper>();
 builder.Services.AddScoped<IWeatherApiClient, WeatherApiClient>();
 builder.Services.AddScoped<ILocalService, LocalService>();
 builder.Services.AddSingleton<ILocalRepository, LocalRepository>();
+builder.Services.AddSingleton<IWidgetCache<WeatherResponse, string>, WidgetCache<WeatherResponse, string>>();
 builder.Services.AddWeatherApiClient(builder.Configuration);
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder => { builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin(); });
+});
+
+
 var app = builder.Build();
+
+app.UseAuthentication()
+    .UseCors(opt => opt.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -17,6 +17,7 @@ public static class ServiceCollectionExtensions
             },
             (httpClient, serviceProvider) => new WeatherApiClient(httpClient,
                 serviceProvider.GetRequiredService<IOptions<ApplicationOptions>>(),
+                serviceProvider.GetRequiredService<IWidgetCache<WeatherResponse?, string>>(),
                 serviceProvider.GetRequiredService<ILogger<WeatherApiClient>>()));
     }
 

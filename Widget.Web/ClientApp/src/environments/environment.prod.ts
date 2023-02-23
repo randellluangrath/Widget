@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   widgetApiBaseUrl: 'http://localhost:54366/v1',
-  widgetApiKey: '2ace74a0-29de-4129-bb56-82bb0268492b',
+  widgetApiKey: '27d34740-c3d4-4938-9260-b5ba3a62922c',
 };

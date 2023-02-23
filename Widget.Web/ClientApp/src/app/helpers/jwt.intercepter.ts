@@ -17,7 +17,10 @@ export class JwtInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     // Not really a JWT Intercepter, but using this pattern to set the API Key.
     request = request.clone({
-      setHeaders: { 'X-API-Key': environment.widgetApiKey },
+      setHeaders: {
+        'X-API-Key': environment.widgetApiKey,
+        'Access-Control-Allow-Origin': '*',
+      },
     });
     return next.handle(request);
   }

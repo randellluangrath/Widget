@@ -1,0 +1,52 @@
+<div *ngIf="isLoading" fxLayout="row" fxLayoutAlign="center center">
+  <app-loading-indicator></app-loading-indicator>
+</div>
+
+<div *ngIf="isNewsCard && !isLoading">
+  <p-card [header]="headline" [style]="{ 'margin-bottom': '1em' }">
+    <ng-template pTemplate="header">
+      <img alt="Card" [src]="imageUrl" />
+    </ng-template>
+    <p>Source: {{ source }}</p>
+    <p>
+      {{ description }}
+    </p>
+  </p-card>
+</div>
+
+<div *ngIf="isWeatherCard && !isLoading" fxFill>
+  <p-card
+    *ngIf="!isLoading"
+    [header]="headline"
+    [style]="{ 'margin-bottom': '1em' }"
+  >
+    <ng-template pTemplate="header">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <img
+          alt="Card"
+          [src]="currentWeather.current.condition.icon"
+          style="width: 85px"
+        />
+      </div>
+    </ng-template>
+
+    <h4>
+      {{ currentWeather.location.name }}, {{ currentWeather.location.region }}
+    </h4>
+    <h5>{{ currentWeather.current.temp_f }}°</h5>
+    <h4>{{ currentWeather.current.condition.text }}</h4>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <p style="font-size: 12px">
+        Wind Direction: {{ currentWeather.current.wind_dir }}
+      </p>
+
+      <p style="font-size: 12px">
+        Wind Speed: {{ currentWeather.current.wind_mph }}
+      </p>
+    </div>
+
+    <p style="font-size: 12px">
+      Updated as of {{ currentWeather.current.last_updated }}
+    </p>
+  </p-card>
+</div>

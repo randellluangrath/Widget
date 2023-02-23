@@ -1,0 +1,62 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-8">
+    <div>
+      <label class="block text-900 font-medium mb-2">Search</label>
+      <input
+        type="text"
+        placeholder="Type here to search"
+        pInputText
+        class="w-full mb-3"
+        [formControl]="fcFilter"
+      />
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="20px">
+      <div
+        fxLayout="column"
+        fxLayoutAlign="start start"
+        style="height: 100%; width: 50%"
+      >
+        <div>
+          <div *ngIf="fcFilter.value">
+            <h4>Best Match</h4>
+          </div>
+          <div *ngIf="!fcFilter.value">
+            <h4>Recent</h4>
+          </div>
+          <div *ngIf="!localLoading && !localFiles.length && fcFilter.value">
+            <h5>No results found :(</h5>
+          </div>
+          <div *ngIf="localLoading">
+            <app-loading-indicator></app-loading-indicator>
+          </div>
+          <div *ngIf="!localLoading">
+            <app-list-item
+              *ngFor="let localFile of localFiles"
+              [name]="localFile.name"
+            ></app-list-item>
+          </div>
+        </div>
+      </div>
+      <div
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        style="height: 100%; width: 50%"
+      >
+        <app-card
+          [isLoading]="newsLoading"
+          [isNewsCard]="true"
+          [headline]="news.title"
+          [source]="news.source.name"
+          [description]="news.description"
+          [imageUrl]="news.urlToImage"
+        ></app-card>
+        <app-card
+          [isLoading]="weatherLoading"
+          [isWeatherCard]="true"
+          [currentWeather]="currentWeather"
+          style="width: 100%"
+        ></app-card>
+      </div>
+    </div>
+  </div>
+</div>

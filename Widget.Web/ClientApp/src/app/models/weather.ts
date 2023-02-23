@@ -1,38 +1,24 @@
 export interface Weather {
-  Location: Location;
-  Current: Current;
+  location: Location;
+  current: Current;
 }
 
-export interface Location {}
+export interface Location {
+  name: string;
+  region: string;
+}
 
 export interface Condition {
-  Text: string;
-  Icon: string;
-  Code: number;
+  text: string;
+  icon: string;
+  code: string;
 }
 
 export interface Current {
-  LastUpdatedEpoch: number;
-  LastUpdated: string;
-  TempC: number;
-  TempF: number;
-  IsDay: number;
-  Condition: Condition;
-  WindMph: number;
-  WindKph: number;
-  WindDegree: number;
-  WindDir: string;
-  PressureMb: number;
-  PressureIn: number;
-  PrecipMm: number;
-  PrecipIn: number;
-  Humidity: number;
-  Cloud: number;
-  FeelslikeC: number;
-  FeelslikeF: number;
-  VisKm: number;
-  VisMiles: number;
-  Uv: number;
-  GustMph: number;
-  GustKph: number;
+  last_updated: string;
+  temp_f: string;
+  condition: Condition;
+  wind_mph: string;
+  wind_dir: string;
+  humidity: string;
 }
