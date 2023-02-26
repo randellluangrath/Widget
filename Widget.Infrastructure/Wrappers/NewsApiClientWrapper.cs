@@ -7,7 +7,7 @@ using NewsAPI.Models;
 using Widget.Contracts.Interfaces;
 using Widget.Contracts.Models;
 
-namespace Widget.Contracts.Wrappers;
+namespace Widget.Infrastructure.Wrappers;
 
 public class NewsApiClientWrapper : INewsApiClientWrapper
 {

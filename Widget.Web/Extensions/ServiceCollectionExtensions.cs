@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using Widget.Contracts.Interfaces;
 using Widget.Contracts.Models;
-using Widget.Web.Clients;
+using Widget.Infrastructure.Clients;
 
 namespace Widget.Web.Extensions;
 

@@ -1,7 +1,7 @@
 ﻿using Widget.Contracts.Interfaces;
 using Widget.Contracts.Models;
 
-namespace Widget.Web.Services;
+namespace Widget.Services;
 
 public class LocalService : ILocalService
 {

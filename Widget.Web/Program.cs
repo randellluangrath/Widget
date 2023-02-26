@@ -1,11 +1,11 @@
 using Widget.Contracts.Interfaces;
 using Widget.Contracts.Models;
-using Widget.Contracts.Wrappers;
+using Widget.Infrastructure.Clients;
 using Widget.Infrastructure.Repositories;
+using Widget.Infrastructure.Wrappers;
+using Widget.Services;
 using Widget.Web.Cache;
-using Widget.Web.Clients;
 using Widget.Web.Extensions;
-using Widget.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,8 +1,10 @@
-﻿using Microsoft.Extensions.Options;
+﻿using System.Net.Http.Json;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Widget.Contracts.Interfaces;
 using Widget.Contracts.Models;
 
-namespace Widget.Web.Clients;
+namespace Widget.Infrastructure.Clients;
 
 public class WeatherApiClient : IWeatherApiClient
 {
