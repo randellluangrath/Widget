@@ -17,10 +17,10 @@ public class LocalController : WidgetBaseController<LocalController>
         _localService = localService;
     }
 
-    // 200
-    // 500
     [ApiKey]
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public IActionResult Get([FromQuery] string? q, int? pageSize)
     {
         IReadOnlyCollection<LocalFile>? localFiles;

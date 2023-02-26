@@ -16,14 +16,14 @@ public class WeatherController : WidgetBaseController<WeatherController>
     {
         _weatherApiClient = weatherApiClient;
     }
-
-    // 200
-    // 400
-    // 404
-    // 500
+    
     [ApiKey]
     [HttpGet]
-    public async Task<ActionResult> GetAsync([FromQuery] string q)
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> GetAsync([FromQuery] string q)
     {
         if (string.IsNullOrWhiteSpace(q))
             return BadRequest($"Error: Parameter {nameof(q)} is missing.");

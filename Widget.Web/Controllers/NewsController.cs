@@ -18,12 +18,12 @@ public class NewsController : WidgetBaseController<NewsController>
     {
         _newsApiClientWrapper = newsApiClientWrapper;
     }
-
-    // 200
-    // 404
-    // 500
+    
     [ApiKey]
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> GetAsync([FromQuery] string q, [FromQuery] DateTime from,
         [FromQuery] int page, [FromQuery] int pageSize)
     {
