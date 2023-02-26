@@ -4,7 +4,7 @@ using Widget.Infrastructure.Clients;
 using Widget.Infrastructure.Repositories;
 using Widget.Infrastructure.Wrappers;
 using Widget.Services;
-using Widget.Web.Cache;
+using Widget.Services.Cache;
 using Widget.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);

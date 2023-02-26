@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using Widget.Contracts.Interfaces;
 
-namespace Widget.Web.Cache;
+namespace Widget.Services.Cache;
 
 public class WidgetCache<T, TKey> : IWidgetCache<T, TKey>
 {
